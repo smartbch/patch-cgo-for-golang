@@ -44,7 +44,7 @@ x_cgo_init(G *g, void (*setg)(void*), void **tlsg, void **tlsbase)
 	}
 	pthread_attr_init(attr);
 	size = 8 * 1024 * 1024;
-	pthread_attr_setstacksize(&attr, size);
+	pthread_attr_setstacksize(attr, size);
 	pthread_attr_getstacksize(attr, &size);
 	g->stacklo = (uintptr)&size - size + 4096;
 	pthread_attr_destroy(attr);
